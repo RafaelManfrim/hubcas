@@ -6,6 +6,7 @@ import { Input } from "@components/ui/input"
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@components/ui/form"
 
 import LogoHubCas from "@assets/logo.png"
+import { Button } from "@/components/ui/button"
 
 const schema = z.object({
   email: z.string({
@@ -31,7 +32,7 @@ export function Login() {
   }
 
   return (
-    <div className="bg-imobverse-background">
+    <div>
       <div className="mx-auto h-svh flex flex-col justify-center items-center max-w-lg p-4">
         <a href="/">
           <img src={LogoHubCas} className="mx-auto w-full max-w-64 mb-8" alt="" />
@@ -43,13 +44,13 @@ export function Login() {
               name="email"
               render={({ field: { ...props } }) => (
                 <FormItem className="mb-4">
-                  <FormLabel className="text-white">E-mail do Participante</FormLabel>
+                  <FormLabel>E-mail</FormLabel>
                   <FormControl>
                     <Input
-                      className="bg-imobverse-input border-0 placeholder:text-gray-400 text-white" 
-                      type="text" 
-                      placeholder="E-mail do Participante" 
-                      {...props} 
+                      className="placeholder:text-gray-400"
+                      type="text"
+                      placeholder="E-mail"
+                      {...props}
                     />
                   </FormControl>
                   <FormMessage>
@@ -64,13 +65,13 @@ export function Login() {
               name="password"
               render={({ field: { ...props } }) => (
                 <FormItem className="mb-4">
-                  <FormLabel className="text-white">Senha</FormLabel>
+                  <FormLabel>Senha</FormLabel>
                   <FormControl>
                     <Input
-                      className="bg-imobverse-input border-0 placeholder:text-gray-400 text-white" 
-                      type="password" 
+                      className="placeholder:text-gray-400"
+                      type="password"
                       placeholder="Senha"
-                      {...props} 
+                      {...props}
                     />
                   </FormControl>
                   <FormMessage>
@@ -81,16 +82,16 @@ export function Login() {
             />
           </div>
 
-          {/* <CheckoutButton onClick={form.handleSubmit(handleSignIn)}>
+          <Button onClick={form.handleSubmit(handleSignIn)} className="w-full bg-blue-600 text-white hover:bg-blue-600 hover:brightness-90">
             Entrar
-          </CheckoutButton> */}
+          </Button>
         </Form>
-        {/* <a 
-          className="text-imobverse-emphasis font-semibold mt-4 cursor-pointer hover:brightness-90"
-          onClick={() => navigate("/participant/forgot-my-password/")}
+        <a
+          className="text-blue-600 font-semibold mt-4 cursor-pointer hover:brightness-90"
+        // onClick={() => navigate("/participant/forgot-my-password/")}
         >
-          Criar / Esqueci Minha Senha
-        </a> */}
+          Esqueci Minha Senha
+        </a>
       </div>
     </div>
   )
